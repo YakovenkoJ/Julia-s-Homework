@@ -4,7 +4,7 @@
 Мой комментарий: Делала попытку после "защиты от дурака" сразу отправить на запрос "Введите первое число" - не получилось, к сожалению.
 Только снова на запуск программы.*/
 
-Console.Write("Введите первое число: ");
+/*Console.Write("Введите первое число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
@@ -22,3 +22,23 @@ else
     Console.Write($"Max = {num2}, Min = {num1} ");
 }
 }
+*/
+
+/*Задача 4. Напишите программу, которая принимает на вход 3 числа и выдает максимальное из этих чисел.*/
+
+Console.Write("Введите первое число: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите третье число: ");
+int num3 = Convert.ToInt32(Console.ReadLine());
+int Max = num1;
+if (Max < num2)
+{
+    Max = num2;
+}
+   if (Max < num3)
+   {
+    Max = num3;
+   }
+Console.Write($"Max = {Max}");
