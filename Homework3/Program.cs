@@ -25,7 +25,7 @@ else Console.WriteLine("Incorrect number's format");*/
 
 /*Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.*/
 
-double LongLine(int x1, int y1, int x2, int y2, int z1, int z2)
+/*double LongLine(int x1, int y1, int x2, int y2, int z1, int z2)
 {
     int X = x2 - x1;
     int Y = y2 - y1;
@@ -50,4 +50,25 @@ int zB = Convert.ToInt32(Console.ReadLine());
 
 double distance = LongLine(xA, yA, xB, yB, zA, zB);
 
-Console.Write($"Расстояние между точками: {distance}.");
+Console.Write($"Расстояние между точками: {distance}.");*/
+
+
+/*Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.*/
+
+void Check (int num)
+{
+    int firstdigit = num / 10000;
+    int seconddigit = num / 1000;
+    int fourthdigit = (num % 10000) % 10;
+    int lastdigit = num % 10;
+    if (firstdigit == lastdigit || seconddigit == fourthdigit)
+    {
+        Console.Write($"Your number {num} is palindrome.");
+    }
+    else Console.Write($"Your number {num} isn't palindrome.");
+}
+
+
+Console.Write("Input five digit's number: ");
+int user_num = Convert.ToInt32(Console.ReadLine());
+Check (user_num);
