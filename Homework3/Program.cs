@@ -71,4 +71,18 @@ void Check (int num)
 
 Console.Write("Input five digit's number: ");
 int user_num = Convert.ToInt32(Console.ReadLine());
-Check (user_num);
+int current = user_num;
+int count_length = 0;
+while (current != 0)
+{
+    current = current / 10;
+    count_length ++;
+}
+if (count_length == 5)
+{
+    Check (user_num);
+}
+else
+{
+    Console.Write($"Your number {user_num} is not a five digit's number.");
+}
