@@ -1,2 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*Задача 29. Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.*/
+
+int [] CreateNewArray (int size)
+{
+    int [] array = new int [size];
+    for (int i = 0; i < size; i++)
+        array[i] = new Random().Next(1,100);
+    return array;
+}
+
+void ShowArray (int [] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+int array_size = 8;
+int[] numbers = CreateNewArray (array_size);
+ShowArray(numbers);
