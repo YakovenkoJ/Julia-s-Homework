@@ -1,6 +1,6 @@
 ﻿/*Задача 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.*/
 
-/*int[] CreateArray()
+int[] CreateArray()
 {
     Console.Write("Input qnt of elements in array: ");
     int M = Convert.ToInt32(Console.ReadLine());
@@ -22,27 +22,27 @@ void ShowArray(int[] array)
 }
 
 
-int CountPos(int[] array)
+int CountQnt(int[] array)
 {
-    int sum = 0;
+    int qnt = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > 0)
-            sum += array[i];
+            qnt += 1;
     }
-    return sum;
+    return qnt;
 }
 
 int [] numbers = CreateArray();
 ShowArray(numbers);
-int result = CountPos(numbers);
-Console.Write($"Sum of elements > 0 is {result}.");*/
+int result = CountQnt(numbers);
+Console.Write($"Qnt of elements > 0 is {result}.");
 
 
 /*Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
 заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.*/
 
-Console.Write("Input b1: ");
+/*Console.Write("Input b1: ");
 double b1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input b2: ");
 double b2 = Convert.ToInt32(Console.ReadLine());
@@ -58,4 +58,4 @@ else
     double y = K1 * x + b1;
     Console.WriteLine($"The cross point of lines has the following coordinates X:{x}; Y:{y}.");
 }
-
+*/
