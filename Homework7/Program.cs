@@ -23,10 +23,37 @@ void Show2dArray(double[,] array)
     Console.WriteLine();
 }
 
-Console.Write("Input qnt of rows in array: ");
+/*Console.Write("Input qnt of rows in array: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input qnt of columns in array: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 double [,] numbers2d = Create2dArray(m, n);
-Show2dArray(numbers2d);
+Show2dArray(numbers2d);*/
+
+
+/*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+и возвращает значение этого элемента или же указание, что такого элемента нет.*/
+
+void Position (double [,] array, int i, int j)
+{
+if (i > array.GetLength(0) || j > array.GetLength(1))
+    Console.Write("There is no such a position in array.");
+else Console.Write($"The number under indexes [{i}, {j}] is {array[i, j]}.");
+}
+
+Console.Write("Input qnt of rows in array: ");
+int arrayRows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input qnt of columns in array: ");
+int arrayColumns = Convert.ToInt32(Console.ReadLine());
+
+double [,] newArray = Create2dArray(arrayRows, arrayColumns);
+Show2dArray(newArray);
+Console.WriteLine();
+
+Console.Write("Input row's index of array: ");
+int i = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input column's index of array: ");
+int j = Convert.ToInt32(Console.ReadLine());
+
+Position(newArray, i, j);
