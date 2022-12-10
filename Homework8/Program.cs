@@ -23,7 +23,7 @@ void Show2dArray(int[,] array)
 
 /*Задача 54. Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.*/
 
-void SortMaxMin(int[,] array)
+/*void SortMaxMin(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
@@ -42,5 +42,52 @@ void SortMaxMin(int[,] array)
 
 int[,] numbers = Create2dArray(4, 3);
 Show2dArray(numbers);
-SortMaxMin(numbers);
+SortMaxMin(numbers);*/
+
+
+/*Задача 56. Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.*/
+
+/*void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + "  ");
+}*/
+
+int[] SumRow(int[,] array)
+{
+    int[] sumArray = new int[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sum += array[i, j];
+        }
+        sumArray[i] = sum;
+    }
+    return sumArray;
+}
+
+int FindMin(int[] array)
+{
+    int indMin = 0;
+    for (int i = 0; i < array.Length; i++)
+        if (array[i] < array[indMin]) indMin = i;
+    return indMin + 1;
+}
+
+
+Console.Write("Input qnt of rows in array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input qnt of columns in array: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] numbers = Create2dArray(m, n);
+Show2dArray(numbers);
+int[] sumRes = SumRow(numbers);
+//ShowArray(sumRes);
+int result = FindMin(sumRes);
+Console.WriteLine();
+Console.WriteLine($"The row with min sum of elements is {result}.");
+
+
 
