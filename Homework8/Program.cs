@@ -95,7 +95,7 @@ Console.WriteLine($"The row with min sum of elements is {result}.");*/
 Массив размером 2 x 2 x 2
 */
 
-const int cellWidth = 3;
+/*const int cellWidth = 3;
 
 int[,,] Create3dArray()
 {
@@ -123,7 +123,67 @@ void Print3dArray(int[,,] array)
     }
 }
 
-Print3dArray(Create3dArray());
+Print3dArray(Create3dArray());*/
 
 
+/*Задача 58(дополнительно). Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+Например, даны 2 матрицы:
+2 4 | 3 4
+3 2 | 3 3
+Результирующая матрица будет:
+18 20
+15 18
+*/
+
+int[,] Create2dArray()
+{
+    int[,] new2dArray = new int[2, 2];
+
+    for (int i = 0; i < 2; i++)
+        for (int j = 0; j < 2; j++)
+        {
+            Console.Write($"Input element {i},{j} of array: ");
+            new2dArray[i, j] = Convert.ToInt32(Console.ReadLine());
+        }
+    return new2dArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + "  ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+
+int [,] ArrayMultiplication(int[,] array1, int[,] array2)
+{
+    int [,] arrayMulti = new int[array1.GetLength(0), array2.GetLength(1)];
+    for (int i = 0; i < array1.GetLength(0); i++)
+        for (int j = 0; j < array2.GetLength(1); j++)
+        {
+            arrayMulti[i, j] = 0;
+            for (int k = 0; k < array1.GetLength(1); k++)
+            {
+                arrayMulti[i, j] += array1[i, k] * array2[k, j];
+            }
+        }
+    return arrayMulti;
+}
+
+int[,] arrayA = Create2dArray();
+Console.WriteLine("Matrix A: ");
+Show2dArray(arrayA);
+int[,] arrayB = Create2dArray();
+Console.WriteLine("Matrix B: ");
+Show2dArray(arrayB);
+int[,] arrayC = ArrayMultiplication(arrayA, arrayB);
+Console.WriteLine("Matrix C = MatrixA * MatrixB: ");
+Show2dArray(arrayC);
 
