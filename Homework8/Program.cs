@@ -135,7 +135,7 @@ Print3dArray(Create3dArray());*/
 15 18
 */
 
-int[,] Create2dArray()
+/*int[,] Create2dArray()
 {
     int[,] new2dArray = new int[2, 2];
 
@@ -185,5 +185,63 @@ Console.WriteLine("Matrix B: ");
 Show2dArray(arrayB);
 int[,] arrayC = ArrayMultiplication(arrayA, arrayB);
 Console.WriteLine("Matrix C = MatrixA * MatrixB: ");
-Show2dArray(arrayC);
+Show2dArray(arrayC);*/
+
+
+/*Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.*/
+
+const int cellWidth = 3;
+
+int[,] CreateSpiralArray(int row, int column)
+{
+    int[,] spiralArray = new int[row, column];
+    int start = 1;
+    int m = spiralArray.GetLength(0);
+    int n = spiralArray.GetLength(1);
+    int size = m * n;
+    int i = 0;
+    int j = 0;
+    while (start <= size)
+    {
+        spiralArray[i, j] = start;
+        start++;
+        if (i <= j + 1 && i + j < n - 1)
+            j++;
+        else if (i < j && i + j >= m - 1)
+            i++;
+        else if (i >= j && i + j > n - 1)
+            j--;
+        else i--;
+    }
+    return spiralArray;
+}
+
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j],cellWidth}");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+
+Console.Write("Input qnt of rows: ");
+int user_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input qnt of columns: ");
+int user_columns = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+if (user_rows != user_columns)
+    Console.Write("It should be a square matrix!");
+else
+{
+    int[,] numbers = CreateSpiralArray(user_rows, user_columns);
+    Show2dArray(numbers);
+}
 
